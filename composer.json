@@ -1,0 +1,33 @@
+{
+    "name": "filipsedivy/recryptor",
+    "description": "🔐 Class for quick and easy change the encryption algorithm",
+    "homepage": "https://github.com/filipsedivy/ReCryptor",
+    "license": "MIT",
+    "keywords": ["password", "crypt"],
+    "type": "library",
+    "time": "2017-10-20",
+    "support": {
+        "email": "mail@filipsedivy.cz",
+        "issues": "https://github.com/filipsedivy/ReCryptor/issues",
+        "source:": "https://github.com/filipsedivy/ReCryptor"
+    },
+    "authors": [
+        {
+            "name": "Filip Šedivý",
+            "email": "mail@filipsedivy.cz",
+            "homepage": "https://filipsedivy.cz",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "classmap": ["src/"]
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "ircmaxell/password-compat": "^1.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.8.5",
+        "nette/tester": "^2.0"
+    }
+}
