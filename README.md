@@ -2,6 +2,8 @@
 <img src=".ReCryptor/images/logo_small.png">
 </p>
 
+⚠️ The current project is under development. Please wait while the project will be covered by the tests. 
+
 Introduction
 ------------
 
@@ -11,7 +13,6 @@ ReCryptor is good for you if you use an outdated encryption algorithm and you ne
 
 Installation
 ------------
-
 
 The recommended way to install is via Composer:
 
