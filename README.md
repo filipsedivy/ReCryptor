@@ -30,7 +30,7 @@ Usage
 <?php
 require_once __DIR__.'/vendor/autoload.php';
 $recryptor = new ReCryptor();
-print_r(e$recryptor->getAvailableAlgorithms());
+print_r($recryptor->getAvailableAlgorithms());
 ```
 
 Object of the algorithm
