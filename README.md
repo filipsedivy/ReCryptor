@@ -37,7 +37,7 @@ print_r($recryptor->getAvailableAlgorithms());
 Object of the algorithm
 =======================
 
-It is also possible to use hash classes. Using them, you can encrypt the input or have the hash validated. Each class inherits the object `FilipSedivy\ReCryptor\Abstraction\Algorithm`.
+It is also possible to use hash classes. Using them, you can encrypt the input or have the hash validated. Each class inherits the object `ReCryptor\Abstraction\Algorithm`.
 ### Base usage
 
 ```php
