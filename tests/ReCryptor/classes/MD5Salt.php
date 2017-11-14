@@ -9,6 +9,8 @@ class MD5Salt extends \ReCryptor\Abstraction\Algorithm
      */
     public function hash()
     {
-        return md5($this->getInput() . 'SuperSalt!');
+        $md5 = new \ReCryptor\Algorithm\MD5();
+        $md5->setInput($this->getInput() . 'SuperSalt!');
+        return $md5->hash();
     }
 }
