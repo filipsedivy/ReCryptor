@@ -84,6 +84,11 @@ $sha512->setHash('098f6bcd4621d373cade4e832627b4f6');
 var_dump($sha512->isAlgorithm());
 ```
 
+Use example diagram
+===================
+
+![Use example diagram][.ReCryptor/images/use.png]
+
 Donate
 ======
 PayPal: mail@filipsedivy.cz
