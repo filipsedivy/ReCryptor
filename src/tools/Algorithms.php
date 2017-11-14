@@ -51,14 +51,9 @@ class Algorithms
      * @throws AlgorithmIsExistsException
      * @throws AlgorithmNotImplementException
      */
-    public static function mergeExternalAndInternalAlgorithms($externalAlgorithms = [])
+    public static function mergeExternalAndInternalAlgorithms($externalAlgorithms = array())
     {
         $algorithms = self::getInternalAlgorithms();
-
-        if($externalAlgorithms instanceof Register)
-        {
-            $externalAlgorithms = $externalAlgorithms->get();
-        }
 
         foreach($externalAlgorithms as $name => $object)
         {
