@@ -14,7 +14,6 @@
 use ReCryptor\Abstraction\Algorithm;
 use ReCryptor\Exceptions\AlgorithmIsExistsException;
 use ReCryptor\Exceptions\AlgorithmNotFound;
-use ReCryptor\Exceptions\AlgorithmNotImplementException;
 use ReCryptor\Exceptions\NeedReHashException;
 use ReCryptor\Exceptions\NotNeedReHashException;
 
