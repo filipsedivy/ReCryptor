@@ -2,7 +2,7 @@
 <img src=".ReCryptor/images/logo_small.png">
 </p>
 
-⚠️ The current project is under development. Please wait while the project will be covered by the tests. 
+⚠️ The current project is under development. Please wait while the project will be covered by the tests.
 
 Introduction
 ------------
