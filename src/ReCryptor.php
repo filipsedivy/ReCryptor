@@ -67,6 +67,7 @@ class ReCryptor
         }
 
         $this->registerAlgorithms[] = $algorithm;
+        return $this;
     }
 
     /**
