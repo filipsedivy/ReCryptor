@@ -87,7 +87,9 @@ var_dump($sha512->isAlgorithm());
 Use example diagram
 ===================
 
-![Use example diagram](.ReCryptor/images/use.png)
+<p align="center">
+<img src=".ReCryptor/images/use.png">
+</p>
 
 Donate
 ======
