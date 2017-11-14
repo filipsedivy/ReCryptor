@@ -2,6 +2,8 @@
 <img src=".ReCryptor/images/logo_small.png">
 </p>
 
+[![Build Status](https://travis-ci.org/filipsedivy/ReCryptor.svg?branch=master)](https://travis-ci.org/filipsedivy/ReCryptor) [![Latest Stable Version](https://poser.pugx.org/filipsedivy/recryptor/v/stable)](https://packagist.org/packages/filipsedivy/recryptor) [![Total Downloads](https://poser.pugx.org/filipsedivy/recryptor/downloads)](https://packagist.org/packages/filipsedivy/recryptor) [![License](https://poser.pugx.org/filipsedivy/recryptor/license)](https://packagist.org/packages/filipsedivy/recryptor)
+
 Introduction
 ------------
 
