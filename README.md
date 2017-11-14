@@ -25,13 +25,36 @@ It needed a minimum version of PHP 5.6.
 Usage
 -----
 
+### Recrypt password
+
+```php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$recryptor = new ReCryptor();
+$recryptor->setInput('MyPassword');
+$recryptor->setHash('daa1f31819ed4928fd00e986e6bda6dab6b177dcbool');
+$result = $recryptor->recrypt('SHA1');
+
+if($result->needRehash())
+{
+    // Need save new hash
+    $hash = $result->getHash();
+}
+else
+{
+    // Not need change hash
+}
+```
+
+
 ### List all available algorithms
 
 ```php
 <?php
 require_once __DIR__.'/vendor/autoload.php';
 $recryptor = new ReCryptor();
-print_r($recryptor->getAvailableAlgorithms());
+print_r($recryptor->getAlgorithms());
 ```
 
 Object of the algorithm
