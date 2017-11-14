@@ -28,7 +28,6 @@ class Classes
         return self::getClassNamespaceFromFile($filePathName) . '\\' . self::getClassNameFromFile($filePathName);
     }
 
-
     /**
      * build and return an object of a class from its file path
      *
@@ -44,10 +43,6 @@ class Classes
 
         return $object;
     }
-
-
-
-
 
     /**
      * get the class namespace form file path using token
