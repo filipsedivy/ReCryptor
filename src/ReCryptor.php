@@ -67,7 +67,7 @@ class ReCryptor
      */
     public function getAlgorithm()
     {
-        $algorithms = $this->getAvailableAlgorithms();
+        $algorithms = $this->getAlgorithms();
         foreach($algorithms as $name => $object)
         {
             /** @var Algorithm $object */
@@ -144,12 +144,16 @@ class ReCryptor
     */
     public function getAvailableAlgorithms()
     {
+        return $this->getAlgorithms();
+    }
 
     /**
      * Obtain all algorithms
      *
      * @return array
     */
+    public function getAlgorithms()
+    {
         return ReCryptor\Tools\Algorithms::mergeExternalAndInternalAlgorithms($this->registerAlgorithms);
     }
 
@@ -162,7 +166,7 @@ class ReCryptor
      */
     private function getAlgorithmByName($name)
     {
-        $algorithms = $this->getAvailableAlgorithms();
+        $algorithms = $this->getAlgorithms();
         foreach($algorithms as $algorithm)
         {
             /** @var Algorithm $algorithm */
