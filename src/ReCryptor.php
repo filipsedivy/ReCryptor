@@ -17,24 +17,18 @@ use ReCryptor\Exceptions\AlgorithmNotFound;
 use ReCryptor\Exceptions\AlgorithmNotImplementException;
 use ReCryptor\Exceptions\NeedReHashException;
 use ReCryptor\Exceptions\NotNeedReHashException;
-use ReCryptor\Tools\Register;
 
 
 class ReCryptor
 {
-    /** @var Register */
-    private $registerAlgorithms;
+    /** @var array */
+    private $registerAlgorithms = array();
 
     /** @var string */
     private $inputHash = null;
 
     /** @var string */
     private $inputClear = null;
-
-    public function __construct()
-    {
-        $this->registerAlgorithms = Register::getInstance('registerAlgorithms');
-    }
 
     /**
      * @param $input string
@@ -56,20 +50,14 @@ class ReCryptor
         return $this;
     }
 
-    public function registerAlgorithm($object)
+    public function registerAlgorithm(Algorithm $algorithm)
     {
-        if(!($object instanceof Algorithm))
+        if(in_array($algorithm->getClassBaseName(), $this->registerAlgorithms))
         {
-            throw new AlgorithmNotImplementException();
+            throw new AlgorithmIsExistsException('Algorithm \''.$algorithm->getClassBaseName().'\' is exists');
         }
 
-        /** @var Algorithm $object */
-        if(array_key_exists($object->getClassBaseName(), $this->registerAlgorithms))
-        {
-            throw new AlgorithmIsExistsException('Algorithm \''.$object->getClassBaseName().'\' is exists');
-        }
-
-        $this->registerAlgorithms->add($object);
+        $this->registerAlgorithms[] = $algorithm;
     }
 
     /**
