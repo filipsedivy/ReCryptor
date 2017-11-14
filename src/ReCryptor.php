@@ -41,6 +41,7 @@ class ReCryptor
 
     /**
      * @param $input string
+     *
      * @return $this
      */
     public function setClear($input)
@@ -61,6 +62,7 @@ class ReCryptor
 
     /**
      * @return null|string
+     *
      * @throws AlgorithmNotFound
      */
     public function getAlgorithm()
@@ -84,7 +86,9 @@ class ReCryptor
     /**
      * @param $outputAlgorithm Algorithm|string
      * @param bool $exception
+     *
      * @return mixed|null
+     *
      * @throws AlgorithmNotFound
      * @throws NeedReHashException
      * @throws NotNeedReHashException
@@ -140,7 +144,9 @@ class ReCryptor
 
     /**
      * @param $name string
+     *
      * @return Algorithm
+     *
      * @throws AlgorithmNotFound
      */
     private function getAlgorithmByName($name)

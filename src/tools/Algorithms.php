@@ -21,6 +21,7 @@ class Algorithms
 {
     /**
      * @return array
+     *
      * @throws AlgorithmIsExistsException
      */
     public static function getInternalAlgorithms()
@@ -43,8 +44,10 @@ class Algorithms
     }
 
     /**
-     * @param array|Register $externalAlgorithms
+     * @param array $externalAlgorithms
+     *
      * @return array
+     *
      * @throws AlgorithmIsExistsException
      * @throws AlgorithmNotImplementException
      */
