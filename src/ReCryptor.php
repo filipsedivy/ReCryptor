@@ -14,8 +14,7 @@
 use ReCryptor\Abstraction\Algorithm;
 use ReCryptor\Exceptions\AlgorithmIsExistsException;
 use ReCryptor\Exceptions\AlgorithmNotFound;
-use ReCryptor\Exceptions\NeedReHashException;
-use ReCryptor\Exceptions\NotNeedReHashException;
+use ReCryptor\Objects\OutputReCryptor;
 
 
 class ReCryptor
@@ -118,37 +117,20 @@ class ReCryptor
         }
 
         /** @var Algorithm $outputAlgorithm */
-        $outputAlgorithm->setInput($this->inputClear);
+        $outputAlgorithm->setInput($this->input);
         $outputHash = $outputAlgorithm->hash();
 
-        if($outputHash === $this->inputHash)
-        {
-            if($exception)
-            {
-                $notNeedReHash = new NotNeedReHashException();
-                $notNeedReHash->setNeedRehash(false);
-                $notNeedReHash->setHash($outputHash);
-                $notNeedReHash->setClear($this->inputClear);
-                throw $notNeedReHash;
-            }
-            return null;
-        }
-        else
-        {
-            if($exception)
-            {
-                $needReHash = new NeedReHashException();
-                $needReHash->setNeedRehash(true);
-                $needReHash->setHash($outputHash);
-                $needReHash->setClear($this->inputClear);
-                throw $needReHash;
-            }
-            return $outputHash;
-        }
+        $needReHash = $outputHash !== $this->hash;
+
+        return new OutputReCryptor(
+            $needReHash,
+            $outputAlgorithm,
+            $outputHash
+        );
     }
 
     /**
-     * @deprecated 1.1 Use the method <i>getAlgorithms()</i>
+     * @deprecated Use the method <i>getAlgorithms()</i>
      *
      * @return array
     */
