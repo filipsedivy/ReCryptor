@@ -19,7 +19,8 @@ class TIGER1603 extends Algorithm
 {
     /**
      * Get the hash
-     * @return mixed
+     *
+     * @return string
      */
     public function hash()
     {

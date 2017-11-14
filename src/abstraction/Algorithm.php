@@ -27,14 +27,18 @@ abstract class Algorithm
 
     /**
      * Get the hash
+     *
      * @return mixed
      */
     abstract public function hash();
 
     /**
      * Set salt
-     * @param $input string
+     *
+     * @param string $input
+     *
      * @return string
+     *
      * @throws NotImplementedException
      */
     public function setSalt($input)
@@ -44,6 +48,7 @@ abstract class Algorithm
 
     /**
      * Get the current instance of the class
+     *
      * @return $this
      */
     public function getClass()
@@ -58,6 +63,7 @@ abstract class Algorithm
 
     /**
      * Is this algorithm?
+     *
      * @return bool
      */
     public function isAlgorithm()

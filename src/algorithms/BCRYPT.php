@@ -19,6 +19,7 @@ class BCRYPT extends Algorithm
 {
     /**
      * Is this algorithm?
+     *
      * @return bool
      */
     public function isAlgorithm()
@@ -28,7 +29,8 @@ class BCRYPT extends Algorithm
 
     /**
      * Get the hash
-     * @return mixed
+     *
+     * @return string
      */
     public function hash()
     {

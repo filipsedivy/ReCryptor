@@ -19,7 +19,8 @@ class HAVAL1604 extends Algorithm
 {
     /**
      * Get the hash
-     * @return mixed
+     *
+     * @return string
      */
     public function hash()
     {
