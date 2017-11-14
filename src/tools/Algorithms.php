@@ -23,6 +23,8 @@ class Algorithms
      * @return array
      *
      * @throws AlgorithmIsExistsException
+     *
+     * @TODO Convert glob to DirectoryIterator
      */
     public static function getInternalAlgorithms()
     {

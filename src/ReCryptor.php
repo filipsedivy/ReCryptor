@@ -137,8 +137,19 @@ class ReCryptor
         }
     }
 
+    /**
+     * @deprecated 1.1 Use the method <i>getAlgorithms()</i>
+     *
+     * @return array
+    */
     public function getAvailableAlgorithms()
     {
+
+    /**
+     * Obtain all algorithms
+     *
+     * @return array
+    */
         return ReCryptor\Tools\Algorithms::mergeExternalAndInternalAlgorithms($this->registerAlgorithms);
     }
 
