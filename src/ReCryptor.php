@@ -144,6 +144,7 @@ class ReCryptor
     */
     public function getAvailableAlgorithms()
     {
+        trigger_error(__METHOD__ . '() is deprecated.', E_USER_DEPRECATED);
         return $this->getAlgorithms();
     }
 
