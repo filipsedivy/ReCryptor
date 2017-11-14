@@ -30,7 +30,7 @@ class ReCryptor
     private $inputClear = null;
 
     /**
-     * @param $input string
+     * @param string $input
      * @return $this
      */
     public function setHash($input)
@@ -40,7 +40,7 @@ class ReCryptor
     }
 
     /**
-     * @param $input string
+     * @param string $input
      *
      * @return $this
      */
@@ -50,6 +50,15 @@ class ReCryptor
         return $this;
     }
 
+    /**
+     * Register a new algorithm
+     *
+     * @param Algorithm $algorithm
+     *
+     * @return $this
+     *
+     * @throws AlgorithmIsExistsException
+     */
     public function registerAlgorithm(Algorithm $algorithm)
     {
         if(in_array($algorithm->getClassBaseName(), $this->registerAlgorithms))
@@ -84,7 +93,7 @@ class ReCryptor
     }
 
     /**
-     * @param $outputAlgorithm Algorithm|string
+     * @param Algorithm|string $outputAlgorithm
      * @param bool $exception
      *
      * @return mixed|null
@@ -159,7 +168,7 @@ class ReCryptor
     }
 
     /**
-     * @param $name string
+     * @param string $name
      *
      * @return Algorithm
      *
