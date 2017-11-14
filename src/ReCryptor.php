@@ -22,11 +22,11 @@ class ReCryptor
     /** @var array */
     private $registerAlgorithms = array();
 
-    /** @var string */
-    private $inputHash = null;
+    /** @var string|null */
+    private $hash = null;
 
-    /** @var string */
-    private $inputClear = null;
+    /** @var string|null */
+    private $input = null;
 
     /**
      * @param string $input
@@ -34,18 +34,31 @@ class ReCryptor
      */
     public function setHash($input)
     {
-        $this->inputHash = $input;
+        $this->hash = $input;
         return $this;
     }
 
     /**
+     * @deprecated Use the method <i>setInput()</i>
+     *
      * @param string $input
      *
      * @return $this
      */
     public function setClear($input)
     {
-        $this->inputClear = $input;
+        trigger_error(__METHOD__ . '() is deprecated.', E_USER_DEPRECATED);
+        return $this->setInput($input);
+    }
+
+    /**
+     * @param string $input
+     *
+     * @return $this
+    */
+    public function setInput($input)
+    {
+        $this->input = $input;
         return $this;
     }
 
@@ -80,8 +93,8 @@ class ReCryptor
         foreach($algorithms as $name => $object)
         {
             /** @var Algorithm $object */
-            $object->setInput($this->inputClear);
-            $object->setHash($this->inputHash);
+            $object->setInput($this->input);
+            $object->setHash($this->hash);
 
             if($object->isAlgorithm())
             {
@@ -94,15 +107,12 @@ class ReCryptor
 
     /**
      * @param Algorithm|string $outputAlgorithm
-     * @param bool $exception
      *
-     * @return mixed|null
+     * @return OutputReCryptor
      *
      * @throws AlgorithmNotFound
-     * @throws NeedReHashException
-     * @throws NotNeedReHashException
      */
-    public function recrypt($outputAlgorithm, $exception = false)
+    public function recrypt($outputAlgorithm)
     {
         if(is_string($outputAlgorithm))
         {
